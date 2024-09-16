@@ -1,4 +1,4 @@
-﻿/// @author Maltseva K.V.
+/// @author Kuvykin N.D
 /// Реализация чат-бота
 
 using System;
@@ -15,7 +15,6 @@ namespace ChatBot
 {
     public partial class FormLogin : Form
     {
-
 
         public FormLogin()
         {
