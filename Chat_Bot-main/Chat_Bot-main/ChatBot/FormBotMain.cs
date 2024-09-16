@@ -1,4 +1,4 @@
-﻿/// @author Maltseva K.V.
+/// @author Kuvykin N.D
 /// Реализация чат-бота
 
 
