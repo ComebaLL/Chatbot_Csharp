@@ -1,4 +1,4 @@
-﻿/// @author Kyvukin N.D
+﻿/// @author Kuvykin N.D
 /// Тест для чатбота
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ChatBot;

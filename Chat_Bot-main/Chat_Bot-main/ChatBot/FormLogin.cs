@@ -1,4 +1,4 @@
-﻿/// @author Maltseva K.V.
+﻿/// @author Kuvykin N.D
 /// Реализация чат-бота
 
 using System;
@@ -54,6 +54,9 @@ namespace ChatBot
             }
         }
 
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

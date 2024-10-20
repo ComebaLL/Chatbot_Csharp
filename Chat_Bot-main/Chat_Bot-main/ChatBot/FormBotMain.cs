@@ -1,4 +1,4 @@
-﻿/// @author Maltseva K.V.
+﻿/// @author Kuvykin N.D
 /// Реализация чат-бота
 
 
@@ -65,7 +65,7 @@ namespace ChatBot
         ///справка об авторе
         private void обАвтореToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("@author Maltseva K.V.");
+            MessageBox.Show("@author Kuvykin N.D");
         }
         ///сохранение чата в фаил
         private void сохранитьИсториюЧатаToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,22 +88,7 @@ namespace ChatBot
                     }
                 }
             
-            //string path = "..ChatBot\\content.txt"; // путь к файлу
-            // string text = textBox_Answer.Text; // текст из TextEdit
-            //File.WriteAllText(path, text); // сохранение текста в файл
 
-
-
-            //using (SaveFileDialog saveFileDialog = new SaveFileDialog())
-            //{
-            //    saveFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt"; // Фильтр для типа файлов
-            //    if (saveFileDialog.ShowDialog() == DialogResult.OK) // Если пользователь выбрал файл 
-            //    {
-            //        /*string date = DateTime.Now.ToString();*/
-            //        string text = textBox_Answer.Text;
-            //        string content = $"{date}\n{text}";
-            //        File.WriteAllText(saveFileDialog.FileName, content); // сохранение текста в файл по выбранному пути
-            //    }
         }
        
         ///загрузка чата из фаила
@@ -135,6 +120,11 @@ namespace ChatBot
         private void инструкцияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(bot.BotInstruction());
+        }
+
+        private void FormBot_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

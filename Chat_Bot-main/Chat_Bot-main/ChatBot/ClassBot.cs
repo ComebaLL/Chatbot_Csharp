@@ -13,12 +13,15 @@ using System.IO;
 
 
 namespace ChatBot
-{
+{   
+    /// Чат-бот может отвечать на привет/ выдавать текущее время, которое в ОС, дату, умеет слаживать и вычитать, выдавать ip-address
     public class Bot
     {
+        //ChatBotHistory для хранения истории сообщение и взаимодествия чат-бота
         public List<string> ChatBotHistory = new List<string>();
-       //
         ///регулярные выражения..
+        /// IgnoreCase игнорирует регист символов при сопоставлении
+        /// * означает ноль или более повторений
         public static Regex regexHello = new Regex(@"Ха*й|приве*т|здарова", RegexOptions.IgnoreCase);
         public static Regex regexTime = new Regex(@"время$|час$", RegexOptions.IgnoreCase);
         public static Regex regexDate = new Regex(@"число$|дата$", RegexOptions.IgnoreCase);
@@ -32,6 +35,7 @@ namespace ChatBot
         //ссылка,по которой происходит поиск айпим адреса
         string url = "https://hidemy.name/ru/what-is-my-ip/";
 
+        //todo сделать так, чтобы класс бота был независим от форм
         //имя пользователя
         string userName = FormLogin.userName;
 
@@ -201,13 +205,21 @@ namespace ChatBot
         /// запрос вычитание
         public string BotSub(string quest)
         {
+            // Удаление всех пробелов
             quest = quest.Replace(" ", "");
+
+            // Извлечение подстроки после последней буквы 'т' (предположительно, часть слова "вычти")
             quest = quest.Substring(quest.LastIndexOf('т') + 2);
-            string[] words = quest.Split(new char[] { 'и','з' }, StringSplitOptions.RemoveEmptyEntries);
+
+            // Разделение строки по символам 'и' и 'з' (например, в выражении "вычти 7 из 10")
+            string[] words = quest.Split(new char[] { 'и', 'з' }, StringSplitOptions.RemoveEmptyEntries);
+
+            // Преобразование чисел из строк в целые числа
             int a = Convert.ToInt32(words[0]);
             int b = Convert.ToInt32(words[1]);
-            return (-a + b).ToString();
 
+            // Обычное вычитание: b - a, без изменения знаков
+            return (a - b).ToString();
         }
     }
 
