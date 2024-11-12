@@ -48,7 +48,7 @@ namespace ChatBot
 
             {
                 userName = textBoxLogin.Text;
-                Form FormBot = new FormBot();
+                Form FormBot = new FormBot(userName);
                 Close();
                 FormBot.Show();
             }

@@ -20,15 +20,16 @@ namespace ChatBot
 {
     public partial class FormBot : Form
     { ///ссылкa на обЪъект
-        public Bot bot = new Bot();
+        private Bot bot;
 
        // List<string> ChatBotHistory = new List<string>();
-        public FormBot()
+        public FormBot(string userName)
         {
             InitializeComponent();
             this.BackgroundImage = Properties.Resources.image_back;
             KeyPreview = true;
             this.KeyDown += new KeyEventHandler(FormBot_KeyEnter);
+            bot = new Bot(userName);
 
 
         }

@@ -18,8 +18,16 @@ namespace ChatBot
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
-            Application.Run(new FormBot());
+
+            // Сначала запускаем FormLogin для ввода userName
+            FormLogin loginForm = new FormLogin();
+            Application.Run(loginForm);
+
+            // Если пользователь ввел имя и форма не закрыта, то продолжаем запускать FormBot
+            if (!string.IsNullOrEmpty(FormLogin.userName))
+            {
+                Application.Run(new FormBot(FormLogin.userName));
+            }
         }
     }
 }

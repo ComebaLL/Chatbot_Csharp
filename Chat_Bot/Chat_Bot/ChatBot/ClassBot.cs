@@ -17,6 +17,13 @@ namespace ChatBot
     /// Чат-бот может отвечать на привет/ выдавать текущее время, которое в ОС, дату, умеет слаживать и вычитать, выдавать ip-address
     public class Bot
     {
+
+        private string userName;
+
+        public Bot(string userName)
+        {
+            this.userName = userName;
+        }
         //ChatBotHistory для хранения истории сообщение и взаимодествия чат-бота
         public List<string> ChatBotHistory = new List<string>();
         ///регулярные выражения..
@@ -37,7 +44,7 @@ namespace ChatBot
 
         //todo сделать так, чтобы класс бота был независим от форм
         //имя пользователя
-        string userName = FormLogin.userName;
+        //string userName = FormLogin.userName;
 
         
 
